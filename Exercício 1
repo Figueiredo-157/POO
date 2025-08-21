@@ -1,0 +1,39 @@
+public class ProjetoLivraria {
+	public static void main(String[] args) {
+
+		Livro livro1 = new Livro();
+		Livro livro2 = new Livro();
+
+		livro1.titulo = "Divina Comédia";
+		livro1.autor = "Dante Alighieri";
+		livro1.preco = 122.50;
+
+		livro2.titulo = "A Odisséia Da Filosofia";
+		livro2.autor = "José Francisco Botelho";
+		livro2.preco = 38.90;
+
+		livro1.mostrarInfo();
+		livro2.mostrarInfo();
+
+		livro1.lerLivro();
+		livro2.lerLivro();
+	}
+}
+
+class Livro {
+
+	String titulo;
+	String autor;
+	double preco;
+
+	void mostrarInfo() {
+		System.out.println("Título: " + titulo);
+		System.out.println("Autor: " + autor);
+		System.out.println("Preço: R$" + preco);
+		System.out.println("-------------------------");
+	}
+
+	void lerLivro() {
+		System.out.println("Lendo: " + titulo);
+	}
+}
