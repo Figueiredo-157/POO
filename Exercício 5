@@ -1,0 +1,44 @@
+public class ProjetoCarro {
+	public static void main(String[] args) {
+
+		Carro carro1 = new Carro();
+		Carro carro2 = new Carro();
+
+		carro1.marca = "Ferrari";
+		carro1.modelo = "Testarossa 4.9";
+		carro1.ano = 1990;
+
+		carro2.marca = "Ford";
+		carro2.modelo = "Mustang Mach 1";
+		carro2.ano = 1969;
+
+		carro1.mostrarInfo();
+		carro1.ligarCarro();
+		carro2.mostrarInfo();
+		carro2.ligarCarro();
+
+		carro1.marca = "Lamborghini";
+		carro1.modelo = "Countach";
+		carro1.ano = 1985;
+
+		carro1.mostrarInfo();
+		carro1.ligarCarro();
+
+	}
+}
+
+class Carro {
+	String marca;
+	String modelo;
+	int ano;
+
+	void mostrarInfo() {
+		System.out.println("Marca: " + marca);
+		System.out.println("Modelo: " + modelo);
+		System.out.println("Ano: " + ano);
+	}
+
+	void ligarCarro() {
+		System.out.println("A máquina " + modelo + " está! ligada! VRUUMMMMM VRUUMMMMM!");
+	}
+}
