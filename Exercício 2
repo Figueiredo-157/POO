@@ -1,0 +1,36 @@
+public class ClienteLivraria {
+    public static void main(String[] args) {
+     
+        Cliente cliente1 = new Cliente();
+        Cliente cliente2 = new Cliente();
+
+        cliente1.nome = "Washington Soares";
+        cliente1.idade = 20;
+        cliente1.codigo = 263;
+
+        cliente2.nome = "Elson Crys Dax Reis";
+        cliente2.idade = 18;
+        cliente2.codigo = 725;
+
+        cliente1.mostrarInfo();
+        cliente2.mostrarInfo();
+        
+        cliente1.lendoLivro();
+        cliente2.lendoLivro();
+    }
+}
+
+class Cliente {
+    String nome;
+    int idade;
+    int codigo;
+
+    void mostrarInfo() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Código: " + codigo);
+        System.out.println("-------------------------");}
+        
+    void lendoLivro() {
+        System.out.println(nome + " é lindo e está lendo um livro");}
+}
