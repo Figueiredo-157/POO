@@ -1,0 +1,50 @@
+public class ContaBanc {
+    public static void main(String[] args) {
+
+        ContaBancaria conta1 = new ContaBancaria();
+        ContaBancaria conta2 = new ContaBancaria();
+
+        conta1.numeroConta = "12345-6";
+        conta1.titular = "Carlos Vinícius";
+        conta1.saldo = 500.0;
+
+        conta2.numeroConta = "98765-4";
+        conta2.titular = "Luis Roberto";
+        conta2.saldo = 1000.0;
+
+        conta1.consultarSaldo();
+        conta1.depositar(200.0);
+        conta1.sacar(100.0);
+        conta1.consultarSaldo();
+
+        conta2.consultarSaldo();
+        conta2.depositar(500.0);
+        conta2.sacar(2000.0);
+        conta2.consultarSaldo();
+    }
+}
+
+class ContaBancaria {
+
+    String numeroConta;
+    String titular;
+    double saldo;
+
+    void depositar(double valor) {
+        saldo += valor;
+        System.out.println("Depósito de R$" + valor + " realizado na conta de " + titular);
+    }
+
+    void sacar(double valor) {
+        if(saldo >= valor) {
+            saldo -= valor;
+            System.out.println("Saque de R$" + valor + " realizado na conta de " + titular);
+        } else {
+            System.out.println("Saldo insuficiente para saque de R$" + valor + " na conta de " + titular);
+        }
+    }
+
+    void consultarSaldo() {
+        System.out.println("Saldo atual da conta de " + titular + ": R$" + saldo);
+    }
+}
