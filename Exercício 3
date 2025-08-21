@@ -1,0 +1,70 @@
+public class ProjetoAluno {
+	public static void main(String[] args) {
+
+		InfoAluno aluno1 = new InfoAluno();
+		InfoAluno aluno2 = new InfoAluno();
+
+		aluno1.nome = "Daniel Belém";
+		aluno1.matricula = "04178626";
+		aluno1.notaAv1 = 3.50;
+		aluno1.notaAv2 = 6.50;
+
+		aluno2.nome = "Gabriel Magalhães";
+		aluno2.matricula = "04184546";
+		aluno2.notaAv1 = 6.50;
+		aluno2.notaAv2 = 4.50;
+
+		aluno1.mostrarDados();
+		aluno1.calcMedia();
+		aluno1.verifAprov();
+
+		aluno2.mostrarDados();
+		aluno2.calcMedia();
+		aluno2.verifAprov();
+
+//Att Dados
+		aluno1.notaAv1 = 8.0;
+		aluno1.mostrarDados();
+		aluno1.calcMedia();
+		aluno1.verifAprov();
+
+		aluno2.notaAv2 = 9.0;
+		aluno2.mostrarDados();
+		aluno2.calcMedia();
+		aluno2.verifAprov();
+
+	}
+}
+
+class InfoAluno {
+
+	String nome;
+	String matricula;
+	double notaAv1;
+	double notaAv2;
+
+	void mostrarDados() {
+		System.out.println("Dados do  aluno: " + nome);
+		System.out.println("Nota da 1º: avaliação: " + notaAv1);
+		System.out.println("Nota da 2º: avaliação: " + notaAv2);
+	}
+
+	void calcMedia() {
+		double media = (notaAv1 + notaAv2) / 2;
+		System.out.println("Média: " + media);
+	}
+
+	void verifAprov() {
+		double media = (notaAv1 + notaAv2) / 2;
+		if(media >= 6.0) {
+			System.out.println(nome + " está aprovado!");
+		}
+		else {
+			System.out.println(nome + " está reprovado!");
+		}
+
+	}
+
+}
+
+
