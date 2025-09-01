@@ -1,0 +1,191 @@
+// Classe Livro
+public class Livro {
+    private String titulo;
+    private String autor;
+    private boolean disponivel;
+
+    // Construtor
+    public Livro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.disponivel = true; // sempre começa disponível
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void emprestar() {
+        if (disponivel) {
+            disponivel = false;
+        }
+    }
+
+    public void devolver() {
+        disponivel = true;
+    }
+}
+
+// Classe Biblioteca
+public class Biblioteca {
+    private Livro[] livros;
+    private int contador;
+
+    public Biblioteca(int capacidade) {
+        livros = new Livro[capacidade];
+        contador = 0;
+    }
+
+    public void adicionarLivro(Livro livro) {
+        if (contador < livros.length) {
+            livros[contador] = livro;
+            contador++;
+        }
+    }
+
+    public void emprestarLivro(String titulo) {
+        for (int i = 0; i < contador; i++) {
+            if (livros[i].getTitulo().equalsIgnoreCase(titulo)) {
+                livros[i].emprestar();
+            }
+        }
+    }
+
+    public void devolverLivro(String titulo) {
+        for (int i = 0; i < contador; i++) {
+            if (livros[i].getTitulo().equalsIgnoreCase(titulo)) {
+                livros[i].devolver();
+            }
+        }
+    }
+
+    public void mostrarLivros() {
+        for (int i = 0; i < contador; i++) {
+            System.out.println(livros[i].getTitulo() + " - " +
+                (livros[i].isDisponivel() ? "Disponível" : "Emprestado"));
+        }
+    }
+
+    // Teste no main
+    public static void main(String[] args) {
+        Biblioteca b = new Biblioteca(5);
+
+        Livro l1 = new Livro("Dom Casmurro", "Machado de Assis");
+        Livro l2 = new Livro("O Hobbit", "Tolkien");
+        Livro l3 = new Livro("1984", "George Orwell");
+
+        b.adicionarLivro(l1);
+        b.adicionarLivro(l2);
+        b.adicionarLivro(l3);
+
+        System.out.println("Livros cadastrados:");
+        b.mostrarLivros();
+
+        b.emprestarLivro("O Hobbit");
+        System.out.println("\nDepois de emprestar 'O Hobbit':");
+        b.mostrarLivros();
+
+        b.devolverLivro("O Hobbit");
+        System.out.println("\nDepois de devolver 'O Hobbit':");
+        b.mostrarLivros();
+    }
+}// Classe Livro
+public class Livro {
+    private String titulo;
+    private String autor;
+    private boolean disponivel;
+
+    // Construtor
+    public Livro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.disponivel = true; // sempre começa disponível
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void emprestar() {
+        if (disponivel) {
+            disponivel = false;
+        }
+    }
+
+    public void devolver() {
+        disponivel = true;
+    }
+}
+
+// Classe Biblioteca
+public class Biblioteca {
+    private Livro[] livros;
+    private int contador;
+
+    public Biblioteca(int capacidade) {
+        livros = new Livro[capacidade];
+        contador = 0;
+    }
+
+    public void adicionarLivro(Livro livro) {
+        if (contador < livros.length) {
+            livros[contador] = livro;
+            contador++;
+        }
+    }
+
+    public void emprestarLivro(String titulo) {
+        for (int i = 0; i < contador; i++) {
+            if (livros[i].getTitulo().equalsIgnoreCase(titulo)) {
+                livros[i].emprestar();
+            }
+        }
+    }
+
+    public void devolverLivro(String titulo) {
+        for (int i = 0; i < contador; i++) {
+            if (livros[i].getTitulo().equalsIgnoreCase(titulo)) {
+                livros[i].devolver();
+            }
+        }
+    }
+
+    public void mostrarLivros() {
+        for (int i = 0; i < contador; i++) {
+            System.out.println(livros[i].getTitulo() + " - " +
+                (livros[i].isDisponivel() ? "Disponível" : "Emprestado"));
+        }
+    }
+
+    // Teste no main
+    public static void main(String[] args) {
+        Biblioteca b = new Biblioteca(5);
+
+        Livro l1 = new Livro("Dom Casmurro", "Machado de Assis");
+        Livro l2 = new Livro("O Hobbit", "Tolkien");
+        Livro l3 = new Livro("1984", "George Orwell");
+
+        b.adicionarLivro(l1);
+        b.adicionarLivro(l2);
+        b.adicionarLivro(l3);
+
+        System.out.println("Livros cadastrados:");
+        b.mostrarLivros();
+
+        b.emprestarLivro("O Hobbit");
+        System.out.println("\nDepois de emprestar 'O Hobbit':");
+        b.mostrarLivros();
+
+        b.devolverLivro("O Hobbit");
+        System.out.println("\nDepois de devolver 'O Hobbit':");
+        b.mostrarLivros();
+    }
+}
