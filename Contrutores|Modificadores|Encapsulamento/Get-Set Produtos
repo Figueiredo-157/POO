@@ -1,0 +1,55 @@
+public class Produto {
+	private String nome;
+	private double preco;
+
+// Construtor
+	public Produto(String nome, double preco) {
+		this.nome = nome;
+	    setPreco(preco);
+	}
+
+// M/F Getter e Setter para nome
+    public String getNome() {
+        return nome;
+    }
+
+ public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+// M/F Getter e Setter para preço (com validação)
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        if (preco >= 0) {
+            this.preco = preco;
+        } else {
+            System.out.println("Preço inválido!");
+        }
+    }
+
+public static void main(String[] args) {
+        Produto p1 = new Produto("Notebook", 3500.0);
+        Produto p2 = new Produto("Teclado", 125.0);
+        
+        System.out.println("Produto: " + p1.getNome() + " - Preço: R$ " + p1.getPreco());
+
+        p1.setPreco(2800.0);
+        System.out.println("Preço atualizado: R$ " + p1.getPreco());
+
+        p1.setPreco(-1000.0);
+        System.out.println("Preço final: R$ " + p1.getPreco());
+        
+    // ---------------------------------------------------------------------------------//
+    
+        System.out.println("Produto: " + p2.getNome() + " - Preço: R$ " + p2.getPreco());
+
+        p2.setPreco(150.0);
+        System.out.println("Preço atualizado: R$ " + p2.getPreco());
+
+        p2.setPreco(-100.0);
+        System.out.println("Preço final: R$ " + p2.getPreco());
+    }
+}
