@@ -1,0 +1,41 @@
+public class CB {
+	private int numC;
+	private double saldoI;
+
+	public CB(int numC, double saldoI) {
+		this.numC = numC;
+		this.saldoI = saldoI;
+	}
+
+	public void depositar(double valor) {
+		if (valor > 0) {
+			saldoI += valor;
+			System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");} 
+		else {
+			System.out.println("Valor de depósito inválido.");
+		}
+	}
+
+	public void sacar(double valor) {
+		if (valor > 0 && valor <= saldoI) {
+			saldoI -= valor;
+			System.out.println("Saque de R$ " + valor + " realizado com sucesso.");}
+		else {
+			System.out.println("Saldo insuficiente ou valor inválido.");
+		}
+	}
+
+	public double getSaldo() {
+		return saldoI;
+	}
+
+	public static void main (String[] args) {
+    CB c1 = new CB(033, 500.0);
+    
+    c1.depositar(500.0);
+    c1.sacar(200.0);
+    c1.sacar(1500.0);
+    
+    System.out.println("Saldo atual: R$ " + c1.getSaldo());
+	}
+}
