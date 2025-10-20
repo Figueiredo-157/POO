@@ -1,0 +1,15 @@
+package SalarioFinal;
+
+public class Main {
+    public static void main(String[] args) {
+        Funcionario dev = new Desenvolvedor(3000.00);
+        Funcionario sup = new Suporte(2500.00);
+
+        System.err.println(" _______________________________________________");
+        System.out.println("|Salário do Desenvolvedor: R$ " + dev.calcularSalarioFinal() + "|");
+        System.err.println("|_______________________________________________|");
+        System.out.println("|Salário do Suporte: R$ " + sup.calcularSalarioFinal() + "                  |");
+        System.err.println("|_______________________________________________|");
+
+    }
+}
