@@ -1,0 +1,16 @@
+package SistemaPagFuncs;
+
+public class Main {
+    public static void main(String[] args) {
+        Funcionario[] listaDePagamento = new Funcionario[2];
+
+        listaDePagamento[0] = new Gerente("Otávio", "111.222.333-44");
+        listaDePagamento[1] = new Programador("Washington", "555.666.777-88");
+
+        for (Funcionario f : listaDePagamento) {
+            System.out.println("Funcionário: " + f.nome);
+            System.out.println("Salário: R$ " + f.calcularSalario());
+            System.out.println("---------------------------");
+        }
+    }
+}
