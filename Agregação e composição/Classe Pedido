@@ -1,0 +1,67 @@
+package ClassePedido;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pedido {
+    public class ItemPedido {
+        private String nomeProduto;
+        private int quantidade;
+        private double precoUnitario;
+
+        public ItemPedido(String nomeProduto, int quantidade, double precoUnitario) {
+            this.nomeProduto = nomeProduto;
+            this.quantidade = quantidade;
+            this.precoUnitario = precoUnitario;
+        }
+
+        public double calcularSubtotal() {
+            return quantidade * precoUnitario;
+        }
+
+        public String getNomeProduto() {
+            return nomeProduto;
+        }
+
+        public int getQuantidade() {
+            return quantidade;
+        }
+
+        public double getPrecoUnitario() {
+            return precoUnitario;
+        }
+    }
+
+    private List<ItemPedido> itens = new ArrayList<>();
+
+    public void adicionarItem(String nome, int quantidade, double preco) {
+        ItemPedido item = new ItemPedido(nome, quantidade, preco);
+        itens.add(item);
+    }
+
+    public double valorTotal() {
+        double total = 0;
+        for (ItemPedido item : itens) {
+            total += item.calcularSubtotal();
+        }
+        return total;
+    }
+
+    public void mostrarResumo() {
+        System.out.println("Resumo do Pedido:");
+        for (ItemPedido item : itens) {
+            System.out.println("- " + item.getNomeProduto() + " | Quantidade: " + item.getQuantidade() +
+                               " | Preço: R$" + item.getPrecoUnitario() +
+                               " | Subtotal: R$" + item.calcularSubtotal());
+        }
+        System.out.println("Valor Total: R$" + valorTotal());
+    }
+
+    public static void main(String[] args) {
+        Pedido pedido = new Pedido();
+        pedido.adicionarItem("Teclado", 2, 150.0);
+        pedido.adicionarItem("Mouse", 1, 80.0);
+
+        pedido.mostrarResumo();
+    }
+}
