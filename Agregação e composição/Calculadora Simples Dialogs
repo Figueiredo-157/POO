@@ -1,0 +1,55 @@
+package CalcSimplesDialogs;
+
+import javax.swing.JOptionPane;
+
+public class CalcSD {
+    public static void main(String[] args) {
+        try {
+            String input1 = JOptionPane.showInputDialog("Digite o primeiro número:");
+            String input2 = JOptionPane.showInputDialog("Digite o segundo número:");
+
+            double num1 = Double.parseDouble(input1);
+            double num2 = Double.parseDouble(input2);
+
+            String[] opcoes = {"+", "-", "×", "÷"};
+            int escolha = JOptionPane.showOptionDialog(
+                null,
+                "Escolha a operação:",
+                "Operação",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                opcoes,
+                opcoes[0]
+            );
+
+            double resultado = 0;
+            boolean erro = false;
+
+            switch (escolha) {
+                case 0: resultado = num1 + num2; break;
+                case 1: resultado = num1 - num2; break;
+                case 2: resultado = num1 * num2; break;
+                case 3:
+                    if (num2 == 0) {
+                        JOptionPane.showMessageDialog(null, "Erro: divisão por zero!");
+                        erro = true;
+                    } else {
+                        resultado = num1 / num2;
+                    }
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Operação inválida.");
+                    erro = true;
+            }
+
+            if (!erro) {
+                JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Erro: entrada inválida. Digite apenas números.");
+        }
+    }
+}
+
