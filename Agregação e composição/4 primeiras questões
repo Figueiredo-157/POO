@@ -1,0 +1,19 @@
+1) Cite quatro exemplos diferentes que podem ser considerados
+como agregação ou composição (dois de cada).
+R= Gaveta e Meia: A gaveta pode conter meias, mas existe independentemente delas.
+Turma e Professor: A turma pode ter um professor associado, mas o professor existe fora da turma.
+
+Computador e Placa-mãe: Sem a placa-mãe, o computador não funciona.
+Pedido e ItemPedido: Os itens fazem parte do pedido e não existem fora dele.
+
+2) O que acontece se uma classe for programada como final? E se
+um atributo for “setado” como final?
+R= A classe não poderá ser herdada. Torna-se uma constante, pois não poderá ter seu valor alterado após ser definido.
+
+3) Qual a vantagem de programar um método estático?
+R= Pode ser chamado sem instanciar a classe.
+
+4) Pesquise e cite mais dois métodos que fazem parte da classe
+Object.
+R= hashCode(): Retorna um número inteiro que representa o objeto em estruturas de dados baseadas em hash.
+getClass(): Retorna a classe à qual o objeto pertence
